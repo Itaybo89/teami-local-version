@@ -150,9 +150,9 @@ When running with Docker, the database data is persisted in a named volume (`db-
 
 If you prefer to run each service manually, follow the instructions in their respective README files:
 
-  * **[Backend README](https://github.com/Itaybo89/teami/blob/main/backend/README_backend.md)**
-  * **[Frontend README](https://github.com/Itaybo89/teami/blob/main/frontend/README_frontend.md)**
-  * **[Brain README](https://github.com/Itaybo89/teami/blob/main/brain/README_brain.md)**
+  * **[Backend README](https://github.com/Itaybo89/Teami_Local_Version/blob/main/backend/README_backend.md)**
+  * **[Frontend README](https://github.com/Itaybo89/Teami_Local_Version/blob/main/frontend/README_frontend.md)**
+  * **[Brain README](https://github.com/Itaybo89/Teami_Local_Version/blob/main/brain/README_brain.md)**
 
 
 **Note**: When running services manually, you will need to manage dependencies, environment variables (especially API and database URLs), and service startup order yourself. For example, you must ensure the PostgreSQL database is running before starting the backend.
