@@ -1,0 +1,158 @@
+/*
+ * FILE: src/components/projects/ProjectLogsTab.module.css
+ * Purpose: Styles for the Project Logs tab, which displays real-time and historical
+ * logs related to a project's activity. This includes general layout,
+ * log entry styling, and interactive elements like a clear button.
+ */
+
+.logsTabContainer {
+  /* Establishes the container as a relative positioning context for children. */
+  position: relative;
+  /* Ensures the container spans the full available width. */
+  width: 100%;
+  /* Arranges direct children vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Allows the container to grow and shrink within its parent, taking available space. */
+  flex: 1;
+  /* Prevents the container from shrinking below its content in flex contexts. */
+  min-height: 0;
+
+  /* Sets the background color for the entire log tab area. */
+  background-color: #1e1e1e;
+}
+
+.headerBar {
+  /* Positions the header bar absolutely within the .logsTabContainer. */
+  position: absolute;
+  /* Aligns the header 10 pixels from the top of its relative parent. */
+  top: 10px;
+  /* Aligns the header 1.5rem from the right of its relative parent. */
+  right: 1.5rem;
+  /* Ensures the header bar appears above other content within the container. */
+  z-index: 2;
+}
+
+.clearButton {
+  /* Sets the background color for the "Clear Logs" button. */
+  background-color: #333;
+  /* Sets the text color to white. */
+  color: #fff;
+  /* Defines a subtle border for the button. */
+  border: 1px solid #555;
+  /* Adds padding inside the button for a comfortable click area. */
+  padding: 0.4rem 0.8rem;
+  /* Changes cursor to a pointer on hover, indicating interactivity. */
+  cursor: pointer;
+  /* Rounds the corners of the button. */
+  border-radius: 4px;
+  /* Sets the font size of the button text. */
+  font-size: 0.9rem;
+}
+
+.clearButton:disabled {
+  /* Reduces opacity when the button is disabled. */
+  opacity: 0.5;
+  /* Changes cursor to default, indicating the button is not interactive. */
+  cursor: default;
+}
+
+.logsTab {
+  /* Adds padding around the log content. */
+  padding: 1rem;
+  /* Adds extra top padding to make space for the absolutely positioned header bar. */
+  padding-top: 3rem;
+  /* Uses a monospace font for displaying logs, improving readability of code-like output. */
+  font-family: monospace;
+  /* Sets the background color specifically for the scrollable log area. */
+  background-color: #1e1e1e;
+  /* Sets the default text color for log entries. */
+  color: #e0e0e0;
+  /* Allows the log area to grow and shrink, occupying available vertical space. */
+  flex: 1;
+  /* Enables vertical scrolling if content overflows. */
+  overflow-y: auto;
+  /* Adds a subtle left border for visual separation. */
+  border-left: 1px solid #333;
+}
+
+/*
+ * Empty/Loading State Styles
+ * Styles for when there are no logs to display or logs are being loaded.
+ */
+.placeholder {
+  /* Adds generous padding around the placeholder text. */
+  padding: 2rem;
+  /* Centers the placeholder text. */
+  text-align: center;
+  /* Sets a muted color for the placeholder text. */
+  color: #888;
+  /* Styles the text in italics to indicate it's a non-content message. */
+  font-style: italic;
+}
+
+/*
+ * Error Message Styling
+ * Specific styles for displaying error messages within the log tab.
+ */
+.error {
+  /* Adds padding around the error message. */
+  padding: 1rem;
+  /* Sets a vibrant red color for error text. */
+  color: #ff6b6b;
+  /* Provides a dark, slightly reddish background for error messages. */
+  background-color: #2b1b1b;
+  /* Adds a distinct red border to highlight errors. */
+  border: 1px solid #a00;
+  /* Adds space below the error message. */
+  margin-bottom: 1rem;
+}
+
+/*
+ * Log List and Item Styles
+ * Styles for the container of individual log entries and each entry itself.
+ */
+.logList {
+  /* Removes default list bullet points. */
+  list-style: none;
+  /* Resets default padding for list. */
+  padding: 0;
+  /* Resets default margin for list. */
+  margin: 0;
+}
+
+.logItem {
+  /* Adds vertical padding for each log entry. */
+  padding: 0.5rem 0;
+  /* Adds a subtle horizontal line below each log entry for separation. */
+  border-bottom: 1px solid #333;
+  /* Sets the line height for better readability of log text. */
+  line-height: 1.4;
+}
+
+/*
+ * Log Level Styling
+ * Styles for the timestamp/level label within each log entry and specific
+ * color coding for different log levels (info, warning, error).
+ */
+.level {
+  /* Makes the log level text bold. */
+  font-weight: bold;
+  /* Adds space to the right of the level text. */
+  margin-right: 0.5rem;
+}
+
+/* Color for informational log entries. */
+.info {
+  color: #42aaff; /* A shade of blue */
+}
+
+/* Color for warning log entries. */
+.warning {
+  color: #ffc107; /* A shade of amber/yellow */
+}
+
+/* Color for error log entries (reusing a consistent error color). */
+.error {
+  color: #ff6b6b; /* A shade of red */
+}

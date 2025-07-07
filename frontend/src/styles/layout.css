@@ -1,0 +1,24 @@
+/* FILE: frontend/src/styles/layout.css */
+/* Purpose: Defines the styles for the main application layout, which includes
+            the sidebar and the main content area for authenticated pages. */
+
+/* The root container for the entire authenticated layout. */
+.layout-root {
+  display: flex; /* Creates a horizontal flex container for the sidebar and content. */
+  height: 100vh; /* Ensures the layout fills the full viewport height. */
+  background-color: #1e1e1e; /* A slightly lighter dark shade than the base background. */
+}
+
+/* The container for the main page content, to the right of the sidebar. */
+.layout-content {
+  flex: 1; /* Allows this element to grow and take up all available space next to the sidebar. */
+  display: flex;
+  flex-direction: column; /* Stacks the content vertically (e.g., a top bar and the page body). */
+  border-left: 1px solid #2a2a2a; /* A subtle separator line between the sidebar and content. */
+  height: 100%;
+
+  /* This is a critical flexbox fix. It prevents the flex item from overflowing its
+     container when its content is too large (e.g., a long, scrollable list).
+     Without this, the flex item might not shrink correctly, causing layout issues. */
+  min-height: 0;
+}

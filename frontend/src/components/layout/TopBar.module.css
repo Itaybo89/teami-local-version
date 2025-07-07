@@ -1,0 +1,62 @@
+/*
+ * FILE: src/components/layout/TopBar.module.css
+ * Purpose: Defines the styles for the application's top navigation bar,
+ * including its layout, branding/title area, and user information display.
+ */
+
+.topbar {
+  /* Fixed height for the top bar. */
+  height: 60px;
+  /* Ensures the top bar spans the full width available. */
+  width: 100%;
+  /* Sets a dark background color for the bar. */
+  background-color: #1f1f1f;
+  /* Sets a light text color for elements within the bar. */
+  color: #f0f0f0;
+  /* Uses flexbox for horizontal layout of items. */
+  display: flex;
+  /* Vertically centers items within the bar. */
+  align-items: center;
+  /* Distributes space between the main content (title) and user info. */
+  justify-content: space-between;
+  /* Adds horizontal padding on the left and right. */
+  padding: 0 1.5rem;
+  /* Adds a subtle bottom border for separation from content below. */
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.title {
+  /* Font size for the main application or page title. */
+  font-size: 1.2rem;
+  /* Font weight for the title, making it stand out. */
+  font-weight: 600;
+}
+
+.user {
+  /* Uses flexbox to arrange user-related elements (e.g., username, avatar). */
+  display: flex;
+  /* Vertically centers user elements. */
+  align-items: center;
+  /* Adds space between user elements. */
+  gap: 0.75rem;
+}
+
+.username {
+  /* Font size for the displayed username. */
+  font-size: 0.95rem;
+  /* Sets a slightly muted color for the username. */
+  color: #ccc;
+}
+
+.avatar {
+  /* Fixed width for the user avatar image. */
+  width: 36px;
+  /* Fixed height for the user avatar image. */
+  height: 36px;
+  /* Makes the avatar perfectly round. */
+  border-radius: 50%;
+  /* Ensures the image covers the avatar area without distortion. */
+  object-fit: cover;
+  /* Provides a fallback background color if the image is not loaded. */
+  background-color: #333;
+}

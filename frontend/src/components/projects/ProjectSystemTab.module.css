@@ -1,0 +1,24 @@
+/* FILE: src/components/projects/ProjectSystemTab.module.css */
+/* Purpose: Defines the styles for the 'System Message' tab within the project workspace. */
+
+/* The main container for the system message tab content. */
+.systemTab {
+  display: flex; /* Creates a flex container. */
+  flex-direction: row; /* Arranges children horizontally. */
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a; /* A dark background for the tab content area. */
+}
+
+/* A flexible area designed to hold chat-like content. */
+.chatArea {
+  flex: 1; /* Allows this area to grow and fill the available space. */
+  overflow-y: auto; /* Adds a vertical scrollbar only if the content overflows. */
+  padding: 1rem;
+}
+
+/* A simple style for placeholder text when no content is available. */
+.placeholder {
+  color: #aaa; /* A muted color for placeholder text. */
+  padding: 1rem;
+}

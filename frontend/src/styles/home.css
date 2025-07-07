@@ -1,0 +1,32 @@
+/* FILE: frontend/src/styles/home.css */
+/* Purpose: Defines the specific styles for the Home page, which serves as the
+            public-facing landing and login page. */
+
+/* The main container for the entire Home page, setting up a two-column layout. */
+.home-container {
+  display: flex;
+  height: 100vh; /* Ensures the container fills the full viewport height. */
+  color: #fff;
+  background-color: #121212;
+}
+
+/* Defines the shared properties for the two main columns: content and login. */
+.content-section, .login-section {
+  flex: 1; /* Each section takes up 50% of the available width. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the content. */
+  align-items: center;     /* Horizontally centers the content. */
+  padding: 20px;
+}
+
+/* Specific alignment for the marketing content section. */
+.content-section {
+  text-align: center;
+}
+
+/* Styles for the primary marketing image on the Home page. */
+.main-image {
+  max-width: 400px; /* Limits the image width to maintain layout integrity. */
+  margin-top: 20px; /* Adds some space between the text and the image. */
+}

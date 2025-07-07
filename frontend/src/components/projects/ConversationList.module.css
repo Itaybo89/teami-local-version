@@ -1,0 +1,107 @@
+/*
+ * FILE: src/components/projects/ConversationList.module.css
+ * Purpose: Styles for the ConversationList component, which displays a sidebar-like
+ * list of conversations, allowing users to select and view them.
+ */
+
+.list {
+  /* Establishes a flex container, arranging items vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Prevents the list from shrinking below its defined width within a flex container. */
+  flex-shrink: 0;
+  /* Sets a fixed width for the conversation list sidebar. */
+  width: 220px;
+  min-width: 220px; /* Ensures the minimum width is maintained. */
+  max-width: 220px; /* Ensures the maximum width is maintained, making it fixed. */
+  /* Sets a dark background color for the list. */
+  background-color: #2a2a2a;
+  /* Adds a right border for visual separation from the main content area. */
+  border-right: 1px solid #444;
+  /* Adds internal padding around the list content. */
+  padding: 12px;
+  /* Rounds the top-left and bottom-left corners, fitting a sidebar aesthetic. */
+  border-radius: 8px 0 0 8px;
+  /* Ensures the list takes up the full available height of its parent. */
+  height: 100%;
+  /* Enables vertical scrolling for long lists of conversations. */
+  overflow-y: auto;
+  /* Hides any horizontal overflow, preventing unwanted scrollbars. */
+  overflow-x: hidden;
+  /* Ensures padding and border are included in the element's total width and height. */
+  box-sizing: border-box;
+}
+
+.list h4 {
+  /* Adds space below the heading. */
+  margin-bottom: 10px;
+  /* Sets the font size for section headings within the list. */
+  font-size: 16px;
+  /* Sets a light grey color for headings. */
+  color: #ccc;
+}
+
+.list ul {
+  /* Removes default list bullet points. */
+  list-style: none;
+  /* Removes default left padding from the unordered list. */
+  padding-left: 0;
+  /* Resets default top/bottom margins for the list. */
+  margin: 0;
+}
+
+.list li {
+  /* Arranges content within each list item horizontally and centers them vertically. */
+  display: flex;
+  align-items: center;
+  /* Adds padding inside each list item. */
+  padding: 10px;
+  /* Adds a bottom border for visual separation between list items. */
+  border-bottom: 1px solid #444;
+  /* Changes the cursor to a pointer on hover, indicating the item is clickable. */
+  cursor: pointer;
+  /* Sets the text color for unselected list items. */
+  color: #eee;
+  /* Rounds the corners of each list item. */
+  border-radius: 4px;
+  /* Smooth transition for background color changes on hover/active states. */
+  transition: background 0.2s ease;
+  /* Hides content that overflows the list item's boundaries. */
+  overflow: hidden;
+}
+
+.list li:hover {
+  /* Changes background color on hover for visual feedback. */
+  background-color: #3a3a3a;
+}
+
+.list li.active {
+  /* Distinct background color for the currently selected/active conversation. */
+  background-color: #444;
+  /* Makes the text bold for the active item. */
+  font-weight: bold;
+  /* Sets text color to white for the active item. */
+  color: #fff;
+}
+
+.titleText {
+  /* Ensures the text takes full available width and behaves as a block. */
+  display: block;
+  /* Hides any text that overflows the container. */
+  overflow: hidden;
+  /* Displays an ellipsis (...) for truncated text. */
+  text-overflow: ellipsis;
+  /* Prevents text from wrapping to the next line. */
+  white-space: nowrap;
+  /* Ensures the text doesn't exceed the parent's width. */
+  max-width: 100%;
+}
+
+.placeholder {
+  /* Sets a muted color for placeholder text (e.g., "No conversations"). */
+  color: #888;
+  /* Styles the placeholder text in italics. */
+  font-style: italic;
+  /* Adds padding around the placeholder text. */
+  padding: 1rem;
+}

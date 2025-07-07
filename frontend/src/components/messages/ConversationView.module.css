@@ -1,0 +1,45 @@
+/* FILE: src/components/messages/ConversationView.module.css */
+/* Purpose: Defines the layout and basic styling for the main conversation display area,
+ * including the container, and states for loading and error messages.
+ */
+
+.container {
+  /* Establishes a flex container, arranging its children (message list and input) vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Ensures the container takes up the full available height of its parent. */
+  height: 100%;
+  
+  /* --- FIXED: position: relative is no longer needed as the input form is not absolutely positioned. --- */
+
+  /* Sets a dark background color for the conversation view. */
+  background-color: #1a1a1a;
+  /* Adds a top border for visual separation, often from a header or sidebar. */
+  border-top: 1px solid #333;
+}
+
+.loading {
+  /* Adds padding around the loading message. */
+  padding: 1rem;
+  /* Sets a muted grey color for the loading text. */
+  color: #aaa;
+  /* Centers the loading message text. */
+  text-align: center;
+}
+
+.error {
+  /* Sets a bright red color for error messages. */
+  color: #ff5555;
+  /* Sets a dark red background for error messages to make them stand out. */
+  background-color: #2a0000;
+  /* Adds padding inside the error message box. */
+  padding: 0.5rem;
+  /* Adds margin around the error message, including more space at the bottom. */
+  margin: 0.5rem 1rem 1rem;
+  /* Rounds the corners of the error message box. */
+  border-radius: 4px;
+  /* Centers the error message text. */
+  text-align: center;
+  /* Sets the font size for the error message. */
+  font-size: 14px;
+}

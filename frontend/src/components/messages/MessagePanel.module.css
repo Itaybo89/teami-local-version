@@ -1,0 +1,98 @@
+/*
+ * FILE: src/components/messages/MessagePanel.module.css
+ * Purpose: Defines the core styling for individual chat messages displayed
+ * within a conversation panel, including distinct styles for different
+ * message senders (user, assistant, unknown) and common message elements.
+ */
+
+.message {
+  /* Adds space below each message for visual separation. */
+  margin-bottom: 0.75rem;
+  /* Internal padding for content within the message bubble. */
+  padding: 0.75rem 1rem;
+  /* Slightly rounded corners for message bubbles. */
+  border-radius: 6px;
+  /* Default font size for message content. */
+  font-size: 14px;
+  /* Default text color for messages. */
+  color: #eee;
+  /* Default background color for messages. */
+  background-color: #1a1a1a;
+  /* Default border for messages. */
+  border: 1px solid #333;
+}
+
+.header {
+  /* Arranges header elements (name, time) horizontally. */
+  display: flex;
+  /* Distributes space between header elements. */
+  justify-content: space-between;
+  /* Vertically aligns items in the center. */
+  align-items: center;
+  /* Adds space below the header before the message body. */
+  margin-bottom: 4px;
+  /* Makes the header text bold. */
+  font-weight: bold;
+  /* Font size for the header text. */
+  font-size: 13px;
+}
+
+.name {
+  /* Specific color for the sender's name, often for the assistant or system. */
+  color: #8ecae6; /* A shade of blue */
+}
+
+/*
+ * Message Type Specific Styles
+ * These styles override the default `.message` styles to visually distinguish
+ * messages based on their sender type (assistant, user, unknown).
+ */
+
+.assistant {
+  /* Background color for messages sent by the assistant. */
+  background-color: #182733; /* Dark blue/grey */
+  /* Border color for assistant messages. */
+  border-color: #284b63; /* Muted blue */
+}
+
+.user {
+  /* Background color for messages sent by the user. */
+  background-color: #1f1a2e; /* Dark purple/grey */
+  /* Border color for user messages. */
+  border-color: #4b397d; /* Muted purple */
+}
+
+.unknown {
+  /* Background color for messages from an unknown sender. */
+  background-color: #292929; /* Neutral dark grey */
+  /* Border color for unknown messages. */
+  border-color: #444; /* Slightly lighter grey */
+}
+
+.body {
+  /* Preserves whitespace and line breaks from the message content, useful for code or multi-line text. */
+  white-space: pre-wrap;
+  /* Sets the line height for better readability of the message content. */
+  line-height: 1.4;
+}
+
+/*
+ * Dynamic Status Tag (e.g., for "loading..." status)
+ * This pseudo-element can be used to append content, like a status, to the message body.
+ * It's currently an empty placeholder, ready to be populated via JavaScript.
+ */
+.body::after {
+  content: ''; /* Placeholder for dynamically added content (e.g., "Loading...") */
+  display: inline; /* Allows the pseudo-element to sit inline with text. */
+  margin-left: 0.5em; /* Adds space between the message body and the appended content. */
+  opacity: 0.6; /* Makes the appended content slightly transparent. */
+  font-style: italic; /* Italicizes the appended content. */
+  font-size: 12px; /* Smaller font size for the appended content. */
+}
+
+.time {
+  /* Muted color for the timestamp. */
+  color: #888;
+  /* Smaller font size for the timestamp. */
+  font-size: 12px;
+}

@@ -1,0 +1,35 @@
+/*
+ * FILE: src/components/projects/ProjectAgentsTab.module.css
+ * Purpose: Styles for the Project Agents tab, typically used to layout
+ * agent-related interfaces like chat or configuration areas.
+ */
+
+.agentTab {
+  /* Arranges children elements in a row. */
+  display: flex;
+  flex-direction: row;
+  /* Ensures the tab takes up the full available height of its parent. */
+  height: 100%;
+  /* Ensures the tab takes up the full available width of its parent. */
+  width: 100%;
+  /* Sets a dark background color for the entire agent tab. */
+  background-color: #1a1a1a;
+}
+
+.chatArea {
+  /* Allows the chat area to grow and shrink, taking up available horizontal space. */
+  flex: 1;
+  /* Ensures the chat area takes up the full available height of its parent. */
+  height: 100%;
+  /* Enables vertical scrolling if content overflows. */
+  overflow-y: auto;
+  /* Adds padding inside the chat area. */
+  padding: 1rem;
+}
+
+.placeholder {
+  /* Sets a light grey color for placeholder text. */
+  color: #aaa;
+  /* Adds padding around the placeholder text. */
+  padding: 1rem;
+}

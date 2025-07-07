@@ -1,0 +1,45 @@
+/* FILE: src/components/projects/TopNavMenu.module.css */
+/* Purpose: Defines the styles for the tabbed navigation menu used within
+            the Project Workspace page. */
+
+/* The main container for the top navigation bar. */
+.topNav {
+  display: flex; /* Arranges the tab buttons horizontally. */
+  gap: 1rem; /* Adds space between the tab buttons. */
+  background-color: #1e1e1e; /* Matches the main content area background. */
+  border-bottom: 1px solid #333; /* A subtle line to separate the nav from the content below. */
+  padding: 0.75rem 1rem;
+
+  /* --- FIXED: Allows the navigation bar to scroll horizontally if the tabs overflow. --- */
+  /* This is the key to preventing tabs from overlapping on smaller screens or with long labels. */
+  overflow-x: auto;
+}
+
+/* Base styles for each individual tab button. */
+.tabButton {
+  background: none;
+  color: #ccc; /* A muted color for inactive tabs. */
+  font-size: 14px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transition for hover effects. */
+  margin: 0; /* Override any global button margins. */
+
+  /* Prevents the button text from wrapping to a new line, which could cause vertical stretching. */
+  white-space: nowrap;
+}
+
+/* Hover effect for the tab buttons. */
+.tabButton:hover {
+  background-color: #2a2a2a;
+  color: #fff; /* Make text brighter on hover. */
+}
+
+/* The style for the currently active tab button. */
+.active {
+  background-color: #3a3a3a; /* A distinct background to indicate selection. */
+  color: white;
+  font-weight: bold;
+}

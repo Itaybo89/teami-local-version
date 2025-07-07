@@ -1,0 +1,103 @@
+# =============================================================================
+# === Docker Compose Configuration for the Multi-Agent AI Platform
+# =============================================================================
+# This file defines the multi-container environment for the application.
+# It includes the database, the Node.js backend, the Python 'brain' worker,
+# and an optional 'watchdog' service.
+#
+# To run all services: `docker-compose up --build -d`
+# To stop all services: `docker-compose down`
+# =============================================================================
+
+services:
+  # --- PostgreSQL Database Service ---
+  # This service provides a persistent PostgreSQL database for the application.
+  db:
+    image: postgres:16.1
+    container_name: mydb
+    restart: always # Ensures the database container restarts automatically if it stops.
+    environment:
+      # These variables create the initial user and database upon first run.
+      # These should match the credentials used by the backend service.
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydatabase
+    ports:
+      # Maps the container's port 5432 to the host's port 5432 for direct access.
+      - "5432:5432"
+    volumes:
+      # Persists the database data on the host machine to prevent data loss on restart.
+      - db-data:/var/lib/postgresql/data
+      # Mounts the schema.sql file to initialize the database schema on first creation.
+      - ./schema/schema.sql:/docker-entrypoint-initdb.d/init.sql
+
+  # --- Node.js Backend Service ---
+  # This is the main API that the frontend interacts with. It also sends
+  # "nudge" requests to the brain service to trigger processing.
+  backend:
+    build: ./backend # Specifies that this service should be built from the ./backend Dockerfile.
+    container_name: mybackend
+    restart: always
+    ports:
+      # Maps the container's port 5000 to the host's port 5000.
+      - "5000:5000"
+    command: ["npm", "start"]
+    depends_on:
+      # Ensures the 'db' service is started before the 'backend' service.
+      - db
+    env_file:
+      # Loads environment variables from the root .env file at runtime.
+      - .env
+    volumes:
+      # Mounts the backend source code for live-reloading during development.
+      - ./backend:/app
+      # This prevents the host's node_modules from overwriting the container's, which can cause issues.
+      - /app/node_modules
+    environment:
+      # This is crucial for inter-container communication. It tells the backend
+      # how to reach the 'brain' service within the Docker network.
+      - BRAIN_API_URL=http://brain:8000
+
+  # --- Python "Brain" Worker Service ---
+  # This service performs the heavy lifting of AI processing. It listens for
+  # HTTP "nudges" from the backend to start working on a project.
+  brain:
+    build:
+      context: ./brain # Specifies the build context is the 'brain' directory.
+    container_name: mybrain
+    restart: always
+    depends_on:
+      - db # Depends on the DB for potential direct queries if ever needed.
+    env_file:
+      - .env
+    working_dir: /app
+    # volumes:  <-- This block is now commented out
+    #   - ./brain:/app
+    command: ["python", "run.py"] # The default command to start the FastAPI server.
+    ports:
+      # Exposes port 8000 so the backend can send HTTP requests to it.
+      - "8000:8000"
+    environment:     
+    - RUN_MODE=server
+
+  # --- Optional Watchdog Service ---
+  # This service periodically checks for stalled or idle projects. It is intended
+  # for local development to mimic a scheduled task runner like a cron job.
+  watchdog:
+    build:
+      context: ./brain # It uses the same Python environment as the brain.
+    container_name: mywatchdog
+    restart: always
+    depends_on:
+      - db
+    env_file:
+      - .env
+    working_dir: /app
+    # The command is overridden to specifically run the watchdog script.
+    command: ["python", "watchdog.py"]
+
+
+# --- Top-Level Named Volume ---
+# This defines the named volume used by the 'db' service for persistent storage.
+volumes:
+  db-data:

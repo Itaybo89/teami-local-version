@@ -1,0 +1,53 @@
+/*
+ * FILE: src/components/messages/SystemLog.module.css
+ * Purpose: Defines the styling for individual system log messages within the application,
+ * distinguishing them visually from regular conversation messages.
+ */
+
+.system {
+  /* Dark background for the system log entry to set it apart. */
+  background-color: #222;
+  /* Left border to visually categorize it as a system message. */
+  border-left: 4px solid #666;
+  /* Light grey text color for readability. */
+  color: #ccc;
+  /* Italicize the text for a distinct system message feel. */
+  font-style: italic;
+  /* Vertical and horizontal padding inside the log entry. */
+  padding: 0.75rem 1rem;
+  /* Vertical margin to separate individual system log entries. */
+  margin: 0.5rem 0;
+  /* Slightly rounded corners for a softer look. */
+  border-radius: 4px;
+  /* Font size for the main content of the system log. */
+  font-size: 14px;
+}
+
+.label {
+  /* Ensures the label sits inline with the text but allows block-level properties. */
+  display: inline-block;
+  /* Right margin to separate the label from the log message body. */
+  margin-right: 6px;
+  /* Muted color for the label text. */
+  color: #999;
+  /* Bold font weight for emphasis. */
+  font-weight: bold;
+  /* Convert label text to uppercase. */
+  text-transform: uppercase;
+  /* Smaller font size for the label to make it less prominent than the message. */
+  font-size: 12px;
+}
+
+.body {
+  /* Slightly lighter text color for the main body of the system log message. */
+  color: #ddd;
+}
+
+.time {
+  /* Pushes the timestamp to the far right within its flex container. */
+  margin-left: auto;
+  /* Muted color for the timestamp. */
+  color: #888;
+  /* Smaller font size for the timestamp. */
+  font-size: 12px;
+}

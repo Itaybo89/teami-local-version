@@ -1,0 +1,76 @@
+/*
+ * FILE: src/components/forms/AddItemForm.module.css
+ * Purpose: Provides styling for a flexible form used to add items,
+ * typically featuring input fields and a submit button.
+ * It's designed to adapt to different screen sizes with flexbox properties.
+ */
+
+.form {
+  /* Uses flexbox to arrange form elements in a row. */
+  display: flex;
+  /* Adds space between form elements. */
+  gap: 0.5rem;
+  /* Adds space below the form. */
+  margin-bottom: 1rem;
+  /* Allows form items to wrap to the next line if space is limited. */
+  flex-wrap: wrap;
+  /* Vertically aligns items in the center. */
+  align-items: center;
+}
+
+input {
+  /* Allows input fields to grow and shrink, with a preferred basis of 200px.
+   * This makes them responsive, taking up available space but trying to be at least 200px wide. */
+  flex: 1 1 200px;
+  /* Sets a maximum width for input fields to prevent them from becoming too wide on large screens. */
+  max-width: 250px;
+  /* Adds internal padding for text input. */
+  padding: 8px;
+  /* Sets a dark background color for the input fields. */
+  background-color: #2a2a2a;
+  /* Sets the text color to white. */
+  color: #fff;
+  /* Removes default border. */
+  border: none;
+  /* Rounds the corners of the input fields. */
+  border-radius: 6px;
+}
+
+input[name="apiKey"] {
+  /* Overrides flex properties for the API key input to make it wider.
+   * It will grow/shrink with a basis of 300px. */
+  flex: 1 1 300px;
+  /* Sets a larger maximum width specifically for the API key input. */
+  max-width: 400px;
+}
+
+button {
+  /* Sets the background color for buttons. */
+  background-color: #3a3a3a;
+  /* Sets the text color to white. */
+  color: #fff;
+  /* Adds internal padding for the button. */
+  padding: 8px 14px;
+  /* Removes default border. */
+  border: none;
+  /* Rounds the corners of the button. */
+  border-radius: 6px;
+  /* Changes cursor to a pointer on hover, indicating interactivity. */
+  cursor: pointer;
+  /* Prevents text inside the button from wrapping. */
+  white-space: nowrap;
+  /* Aligns the button to the start (top) of its flex container row,
+   * useful if other elements like inputs have varying heights. */
+  align-self: flex-start;
+  /* Prevents the button from shrinking below its content size. */
+  flex-shrink: 0;
+  /* Prevents the button from growing and taking up extra space. */
+  flex-grow: 0;
+  /* Sets a reasonable maximum width for the button. */
+  max-width: 120px;
+}
+
+button:hover {
+  /* Darkens the button background slightly on hover for visual feedback. */
+  background-color: #444;
+}

@@ -1,0 +1,108 @@
+/*
+ * FILE: src/components/layout/Sidebar.module.css
+ * Purpose: Defines the styles for the application's main sidebar navigation.
+ * This includes the overall layout, styling for navigation buttons, and a
+ * dedicated logout button positioned at the bottom.
+ */
+
+.sidebar {
+  /* Sets the sidebar to take the full viewport height. */
+  height: 100vh;
+  /* Fixed width for the sidebar. */
+  width: 220px;
+  /* Sets a dark background color. */
+  background-color: #1a1a1a;
+  /* Adds internal padding. */
+  padding: 1rem;
+  /* Uses flexbox to arrange items vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Aligns content to the start (top) of the sidebar. */
+  justify-content: flex-start; /* Changed from space-between to allow `margin-top: auto` for logout */
+  /* Centers items horizontally within the sidebar. */
+  align-items: center;
+  /* Ensures padding and border are included in the element's total width/height. */
+  box-sizing: border-box;
+  /* Establishes a positioning context for any absolutely positioned children if needed. */
+  position: relative;
+}
+
+.menu {
+  /* Uses flexbox to arrange menu items vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Adds space between menu buttons. */
+  gap: 1rem;
+  /* Adjusts the top margin to position the menu content. */
+  margin-top: 5rem; /* This value might need adjustment based on top bar or logo */
+  /* Ensures the menu container spans the full width of the sidebar's padding area. */
+  width: 100%;
+  /* Centers the buttons within the menu container. */
+  align-items: center;
+}
+
+.menu button {
+  /* Resets all default button styles from the browser. */
+  all: unset;
+  /* Makes the button behave as a block-level element. */
+  display: block;
+  /* Sets the width of the button relative to its parent (`.menu`). */
+  width: 80%; /* Shrinks button width to 80% of sidebar's content area */
+  /* Adds vertical and horizontal padding, making the button taller. */
+  padding: 18px; /* Bigger height for click area */
+  /* Sets the background color of the button. */
+  background-color: #1a1a1a;
+  /* Sets the text color of the button. */
+  color: #f0f0f0;
+  /* Centers the text horizontally. */
+  text-align: center;
+  /* Adds a subtle bottom border for visual separation. */
+  border-bottom: 1px solid #2c2c2c;
+  /* Sets the font size for the button text. */
+  font-size: 1rem;
+  /* Ensures padding and border are included in the element's total width/height. */
+  box-sizing: border-box;
+  /* Changes the cursor to a pointer on hover, indicating interactivity. */
+  cursor: pointer;
+  /* Rounds the corners of the button. */
+  border-radius: 8px;
+}
+
+.menu button:hover {
+  /* Changes the background color on hover for visual feedback. */
+  background-color: #2a2a2a;
+}
+
+.logout {
+  /* Resets all default button styles from the browser. */
+  all: unset;
+  /* Makes the button behave as a block-level element. */
+  display: block;
+  /* Sets the width of the logout button. */
+  width: 80%;
+  /* Adds internal padding to the button. */
+  padding: 18px;
+  /* Sets a distinct background color for the logout button (reddish hue). */
+  background-color: #8a2b2b;
+  /* Sets the text color to white. */
+  color: #fff;
+  /* Centers the text horizontally. */
+  text-align: center;
+  /* Sets the font size for the button text. */
+  font-size: 1rem;
+  /* Pushes the logout button to the very bottom of the sidebar, above its fixed bottom margin. */
+  margin-top: auto;
+  /* Adds a fixed bottom margin for spacing from the very edge. */
+  margin-bottom: 2rem;
+  /* Ensures padding and border are included in the element's total width/height. */
+  box-sizing: border-box;
+  /* Changes the cursor to a pointer on hover, indicating interactivity. */
+  cursor: pointer;
+  /* Rounds the corners of the button. */
+  border-radius: 8px;
+}
+
+.logout:hover {
+  /* Darkens the background color on hover for visual feedback. */
+  background-color: #a23333;
+}

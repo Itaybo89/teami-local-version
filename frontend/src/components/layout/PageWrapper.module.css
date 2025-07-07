@@ -1,0 +1,33 @@
+/*
+ * FILE: src/components/layout/PageWrapper.module.css
+ * Purpose: Defines the core layout for content pages within the application,
+ * ensuring they fill available space, handle overflow, and maintain a consistent
+ * internal structure.
+ */
+
+.wrapper {
+  /* Adds consistent padding around the page content. */
+  padding: 2rem;
+  /* Allows the wrapper to grow and shrink, taking available space in a flex container. */
+  flex: 1;
+  /* Enables vertical scrolling if content overflows the wrapper's height. */
+  overflow-y: auto;
+  /* Uses flexbox to arrange internal content vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Prevents the flex item from shrinking below its content size,
+   * essential for preventing content overflow issues in flex containers. */
+  min-height: 0;
+}
+
+.content {
+  /* Allows the content area to grow and shrink, taking available vertical space. */
+  flex: 1;
+  /* Uses flexbox to arrange internal elements vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Adds space between direct children elements within the content area. */
+  gap: 1rem;
+  /* Prevents content from pushing down the layout, similar to the wrapper. */
+  min-height: 0;
+}

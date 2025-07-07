@@ -1,0 +1,82 @@
+/* FILE: src/components/messages/MessageInput.module.css */
+/* Purpose: Styles for the message input form, typically located at the bottom of a chat or
+ * conversation view. This includes styling for the container, textarea, and send button.
+ */
+
+.inputForm {
+  /* --- FIXED: Removed absolute positioning. --- */
+  /* The form now sits naturally at the bottom of its parent flex container,
+     taking up only the height it needs. */
+  
+  /* --- Styling --- */
+  /* Uses flexbox to lay out the textarea and button horizontally. */
+  display: flex;
+  /* Vertically aligns items in the center (e.g., the button with the textarea's text). */
+  align-items: center;
+  /* Adds internal padding around the input and button. */
+  padding: 0.75rem;
+  /* Sets a dark background for the input form area. */
+  background-color: #1a1a1a;
+  /* Adds a top border for visual separation from the message list above. */
+  border-top: 1px solid #333;
+}
+
+.input {
+  /* Allows the textarea to grow and shrink, taking available horizontal space. */
+  flex: 1;
+  /* Adds internal padding for the text. */
+  padding: 10px;
+  /* Rounds the corners of the textarea. */
+  border-radius: 6px;
+  /* Sets a slightly lighter dark background for the input field. */
+  background-color: #2a2a2a;
+  /* Sets the text color to white. */
+  color: #fff;
+  /* Removes the default border provided by the browser. */
+  border: none;
+  /* Disables manual resizing of the textarea by the user. */
+  resize: none;
+
+  /* --- Sizing and Scrolling --- */
+  /* Inherits the font family from its parent elements, ensuring consistency. */
+  font-family: inherit;
+  /* Sets the font size for the input text. */
+  font-size: 1rem;
+  /* Sets the line height for better readability of multi-line input. */
+  line-height: 1.4;
+  /* Sets a minimum height for the textarea, roughly one line of text. */
+  min-height: 24px;
+  /* Sets a maximum height for the textarea, preventing it from growing too large. */
+  max-height: 120px; /* Roughly 5 lines of text */
+  /* Adds a vertical scrollbar if the text content exceeds `max-height`. */
+  overflow-y: auto;
+}
+
+.input:focus {
+  /* Adds a subtle outline when the textarea is focused for accessibility and user feedback. */
+  outline: 1px solid #555;
+}
+
+button {
+  /* Adds space to the left of the button, separating it from the textarea. */
+  margin-left: 0.5rem;
+  /* Sets a dark background color for the send button. */
+  background-color: #333;
+  /* Sets the text color to white. */
+  color: white;
+  /* Removes the default border from the button. */
+  border: none;
+  /* Adds internal padding for the button. */
+  padding: 10px 16px;
+  /* Rounds the corners of the button. */
+  border-radius: 6px;
+  /* Changes the cursor to a pointer on hover, indicating interactivity. */
+  cursor: pointer;
+  /* Aligns the button to the bottom of the flex container, useful if the textarea grows. */
+  align-self: flex-end;
+}
+
+button:hover {
+  /* Darkens the button background slightly on hover for visual feedback. */
+  background-color: #444;
+}

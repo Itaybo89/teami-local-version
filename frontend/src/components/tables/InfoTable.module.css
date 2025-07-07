@@ -1,0 +1,69 @@
+/*
+ * FILE: src/components/tables/InfoTable.module.css
+ * Purpose: Provides the core styling for the generic InfoTable component,
+ * including the overall table appearance, cell styles, and specific
+ * styles for action buttons within the table rows.
+ */
+
+.table {
+  /* Ensures the table takes up the full width of its container. */
+  width: 100%;
+  /* Collapses table borders into a single border for a cleaner look. */
+  border-collapse: collapse;
+  /* Sets a dark background color for the entire table. */
+  background-color: #1e1e1e;
+  /* Sets a light text color for all content within the table. */
+  color: #f0f0f0;
+}
+
+th, td {
+  /* Adds internal padding to table header and data cells for readability. */
+  padding: 12px;
+  /* Adds a dark bottom border to separate rows and cells visually. */
+  border-bottom: 1px solid #333;
+  /* Aligns text to the left within cells. */
+  text-align: left;
+}
+
+th {
+  /* Sets a slightly lighter dark background specifically for table headers. */
+  background-color: #2a2a2a;
+  /* Makes the header text bold. */
+  font-weight: bold;
+}
+
+/* --- Action Button Styles --- */
+.actionBtn {
+  /* Displays buttons inline but allows block-level properties like margin and padding. */
+  display: inline-block;
+  /* Adds space to the right of each button when multiple are present. */
+  margin-right: 6px;
+  /* Adds internal padding for the button's clickable area. */
+  padding: 5px 10px;
+  /* Removes default button borders. */
+  border: none;
+  /* Changes the cursor to a pointer on hover, indicating interactivity. */
+  cursor: pointer;
+  /* Rounds the corners of the buttons. */
+  border-radius: 4px;
+  /* Sets a dark background for general action buttons. */
+  background-color: #333;
+  /* Sets the text color to white. */
+  color: #fff;
+  /* Allows the width to be determined by content, but sets a minimum. */
+  width: auto;
+  /* Ensures buttons are at least a certain width for consistent appearance. */
+  min-width: 70px;
+  /* Sets a slightly smaller font size for action button text. */
+  font-size: 0.85rem;
+}
+
+.deleteBtn {
+  /* Overrides the background color for delete-specific action buttons to red. */
+  background-color: #a00;
+}
+
+.actionBtn:hover {
+  /* Reduces opacity on hover for a visual feedback effect, making the button slightly transparent. */
+  opacity: 0.8;
+}

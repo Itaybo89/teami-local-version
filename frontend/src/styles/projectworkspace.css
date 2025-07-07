@@ -1,0 +1,24 @@
+/* FILE: frontend/src/styles/projectworkspace.css */
+/* Purpose: Defines the specific styles for the Project Workspace page,
+            particularly the main tabbed interface for viewing conversations and logs. */
+
+/* The main container for the tabbed content area (e.g., Messages, Agents, Logs). */
+.workspace-tab-area {
+  display: flex; /* Establishes a flex container for the tab content. */
+  flex: 1; /* Allows the tab area to grow and fill the available vertical space. */
+  min-height: 0; /* A critical flexbox property to allow shrinking and prevent overflow. */
+  overflow: hidden; /* Hides any content that might overflow its container. */
+  border: 1px solid #333; /* A subtle border to frame the workspace. */
+  border-radius: 8px; /* Rounded corners for a modern look. */
+
+  /* This is a key constraint to prevent the workspace from becoming too tall
+     and pushing other UI elements off-screen, ensuring a balanced layout. */
+  max-height: 80vh;
+}
+
+/* The direct child of the tab area, which holds the actual content of the active tab. */
+.workspace-tab-content {
+  flex: 1; /* Ensures the content itself fills the entire space of the tab area. */
+  display: flex; /* Allows the content within the tab to use flexbox for its own layout. */
+  min-height: 0; /* Inherits the overflow prevention behavior. */
+}

@@ -1,0 +1,35 @@
+/*
+ * FILE: src/components/common/Badge.module.css
+ * Purpose: Defines styles for a small, colored badge component, commonly used
+ * to indicate status (e.g., active, disabled) or categories.
+ */
+
+.badge {
+  /* Adds internal padding around the text within the badge. */
+  padding: 4px 8px;
+  /* Rounds the corners of the badge for a softer look. */
+  border-radius: 4px;
+  /* Sets the font size for the badge text. */
+  font-size: 0.9rem;
+  /* Sets the default text color to white for contrast against dark backgrounds. */
+  color: #fff;
+  /* Ensures the badge behaves as an inline element but allows box model properties. */
+  display: inline-block;
+}
+
+/* --- Badge Type Styles --- */
+
+.default {
+  /* Default background color for badges when no specific type is applied. */
+  background-color: #555; /* A neutral dark grey */
+}
+
+.active {
+  /* Background color for badges indicating an 'active' or 'success' status. */
+  background-color: green;
+}
+
+.disabled {
+  /* Background color for badges indicating a 'disabled' or 'inactive' status. */
+  background-color: gray;
+}

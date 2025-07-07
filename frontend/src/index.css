@@ -1,0 +1,88 @@
+/* FILE: frontend/src/index.css */
+/* Purpose: Provides global styles, resets, and utility classes for the entire application. */
+
+/* === Reset === */
+/* A standard reset to remove default browser margins, padding, and adjust box-sizing. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Base Elements === */
+/* Sets up the base styles for the entire document, ensuring a consistent look and feel. */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* A deep dark background for a modern look. */
+  color: #f0f0f0;             /* A light text color for high contrast and readability. */
+  overflow-x: hidden;         /* Prevents horizontal scrolling. */
+}
+
+/* === Root Mount Point === */
+/* Ensures the main React application container fills the entire viewport. */
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Scrollbar Styling === */
+/* A minimal, dark-mode-friendly scrollbar for WebKit browsers (Chrome, Safari). */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #444; /* A subtle scrollbar thumb color. */
+  border-radius: 4px;
+}
+
+/* === Typography Helpers === */
+/* Simple utility classes for text alignment and styling. */
+.text-center {
+  text-align: center;
+}
+.text-muted {
+  color: #aaa; /* A muted color for secondary text. */
+}
+
+/* === Utility Layout Classes === */
+/* Reusable flexbox and layout helper classes. */
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+.fullscreen {
+  height: 100vh;
+  width: 100%;
+}
+
+/* === Global Form Element Styling === */
+/* A light touch on base styles for common form elements for a consistent theme. */
+button, input, select {
+  padding: 6px;
+  font-size: 14px;
+  line-height: 1.2;
+  border: none;
+  border-radius: 4px;
+  background-color: #2a2a2a;
+  color: #fff;
+  margin-top: 10px; /* Provides default spacing when stacked vertically. */
+}
+
+button:hover {
+  background-color: #3a3a3a;
+  cursor: pointer;
+}
+
+input:focus, select:focus {
+  outline: 2px solid #555; /* A subtle focus ring for accessibility. */
+}

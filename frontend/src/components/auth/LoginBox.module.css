@@ -1,0 +1,172 @@
+/*
+ * FILE: src/components/auth/LoginBox.module.css
+ * Purpose: Provides comprehensive styling for the login and registration forms,
+ * ensuring a consistent and visually appealing user authentication interface.
+ * This includes layout, input fields, buttons, and error messages.
+ */
+
+/* --- Login Section Container --- */
+.loginSection {
+  /* Allows the section to grow and shrink within a flex container, taking available space. */
+  flex: 1;
+  /* Uses flexbox to arrange content vertically within the section. */
+  display: flex;
+  flex-direction: column;
+  /* Centers content horizontally and vertically. */
+  align-items: center;
+  justify-content: center;
+  /* Adds internal padding around the content. */
+  padding: 20px;
+  /* Sets a dark background color. */
+  background-color: #1e1e1e;
+  /* Sets a light text color. */
+  color: #fff;
+  /* Rounds the corners of the login box. */
+  border-radius: 8px;
+  /* Adds a subtle shadow for depth. */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Controls consistent vertical spacing between direct child elements. */
+  gap: 14px;
+}
+
+/* --- Title Styling --- */
+.loginSection h2 {
+  /* Adds space below the title. */
+  margin-bottom: 10px;
+}
+
+/* --- Form Wrapper Styling --- */
+.loginSection form {
+  /* Ensures the form takes full available width within its parent. */
+  width: 100%;
+  /* Sets a maximum width for the form to keep it readable on larger screens. */
+  max-width: 300px;
+}
+
+/* --- Input Fields Styling --- */
+.loginSection input {
+  /* Ensures input fields take full width of their parent form. */
+  width: 100%;
+  /* Adds internal padding for text input. */
+  padding: 10px 14px;
+  /* Adds space below each input field. */
+  margin-bottom: 10px;
+  /* Adds a subtle border. */
+  border: 1px solid #555;
+  /* Rounds the corners. */
+  border-radius: 4px;
+  /* Sets a slightly lighter dark background for the input fields. */
+  background-color: #222;
+  /* Sets a light text color. */
+  color: #eee;
+  /* Sets the font size. */
+  font-size: 1rem;
+}
+
+.loginSection input:focus {
+  /* Changes border color on focus for visual feedback. */
+  border-color: #0a84ff; /* A vibrant blue */
+  /* Removes default browser outline. */
+  outline: none;
+}
+
+/* --- Submit Button Styling --- */
+.loginSection button[type="submit"] {
+  /* Ensures the button takes full width. */
+  width: 100%;
+  /* Adds internal padding. */
+  padding: 10px;
+  /* Removes default border. */
+  border: none;
+  /* Rounds corners. */
+  border-radius: 4px;
+  /* Sets a vibrant blue background color. */
+  background-color: #0a84ff;
+  /* Sets white text color. */
+  color: #fff;
+  /* Makes text bold. */
+  font-weight: bold;
+  /* Sets font size. */
+  font-size: 1rem;
+  /* Changes cursor to pointer on hover. */
+  cursor: pointer;
+}
+
+.loginSection button[type="submit"]:hover {
+  /* Darkens the background color slightly on hover for visual feedback. */
+  background-color: #0060df; /* A darker shade of blue */
+}
+
+/* --- Demo Login Button Styling --- */
+.demoButton {
+  /* Ensures the button takes full width up to a max. */
+  width: 100%;
+  max-width: 300px;
+  /* Adds internal padding. */
+  padding: 10px;
+  /* Removes default border. */
+  border: none;
+  /* Rounds corners. */
+  border-radius: 4px;
+  /* Sets a neutral dark background. */
+  background-color: #333;
+  /* Sets white text color. */
+  color: #fff;
+  /* Sets font size. */
+  font-size: 1rem;
+  /* Changes cursor to pointer on hover. */
+  cursor: pointer;
+}
+
+.demoButton:hover {
+  /* Lightens the background color on hover. */
+  background-color: #444;
+}
+
+/* --- Error Message Styling --- */
+.error {
+  /* Sets a red color for error messages. */
+  color: #ff5555;
+  /* Sets font size. */
+  font-size: 0.95rem;
+}
+
+/* --- Paragraph Under Form Styling (e.g., "Already have an account?") --- */
+.loginSection p {
+  /* Sets font size. */
+  font-size: 0.95rem;
+  /* Centers the text. */
+  text-align: center;
+}
+
+/* --- Inline Button for "Log in here" or "Register here" --- */
+.loginSection p button {
+  /* Removes all default button styles, making it appear as a link. */
+  background: none;
+  border: none;
+  /* Sets a vibrant blue color. */
+  color: #0a84ff;
+  /* Changes cursor to pointer. */
+  cursor: pointer;
+  /* Sets font size. */
+  font-size: 0.95rem;
+  /* Removes default padding. */
+  padding: 0;
+  /* Adds a small left margin to separate it from preceding text. */
+  margin-left: 5px;
+}
+
+.loginSection p button:hover {
+  /* Adds an underline on hover for visual feedback, like a link. */
+  text-decoration: underline;
+}
+
+/* --- Optional Divider Line or Label Styling --- */
+.divider {
+  /* Sets font size. */
+  font-size: 0.9rem;
+  /* Sets a muted grey color. */
+  color: #888;
+  /* Centers the text. */
+  text-align: center;
+}

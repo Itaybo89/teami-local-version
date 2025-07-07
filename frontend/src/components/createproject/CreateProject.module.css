@@ -1,0 +1,394 @@
+/*
+ * FILE: src/components/createproject/CreateProject.module.css
+ * Purpose: Provides comprehensive styling for the "Create Project" form.
+ * This includes the overall page layout, distinct sections for general settings
+ * and agent members, and specific styles for inputs, text areas, buttons,
+ * and informational/template control boxes.
+ */
+
+/* ---------- Overall Page Layout ---------- */
+.createProjectForm {
+  /* Arranges form sections vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Ensures the form takes full available height. */
+  height: 100%;
+  /* Adds spacing between major form sections. */
+  gap: 16px;
+}
+
+/* ---------- Top + Bottom Section Split (for general settings and agents list) ---------- */
+.createProjectTopSection {
+  /* Uses CSS Grid to create a layout with two rows. */
+  display: grid;
+  /* Defines row heights: top section takes 1 fraction unit, bottom takes 2. */
+  grid-template-rows: 1fr 2fr; /* Roughly 1/3 top, 2/3 bottom */
+  /* Ensures this section takes full available height. */
+  height: 100%;
+  /* Adds spacing between the grid rows. */
+  gap: 16px;
+  /* Allows this section to grow and take up available space in its parent flex container. */
+  flex-grow: 1;
+}
+
+/* ---------- Styling for the Top Section (General Project Settings) ---------- */
+.createProjectTop {
+  /* Uses CSS Grid to create a layout with two columns. */
+  display: grid;
+  /* Defines column widths: left column takes 1 fraction unit, right takes 2. */
+  grid-template-columns: 1fr 2fr; /* Roughly 1/3 left, 2/3 right */
+  /* Adds spacing between the grid columns. */
+  gap: 24px;
+  /* Aligns grid items to the start (top) of their respective grid areas. */
+  align-items: start;
+  /* Adds padding at the bottom of this section. */
+  padding-bottom: 8px;
+}
+
+/* ---------- Styling for the Left Column within the Top Section ---------- */
+.leftColumn {
+  /* Arranges items vertically within the column. */
+  display: flex;
+  flex-direction: column;
+  /* Adds spacing between elements in the column. */
+  gap: 12px;
+}
+
+/* ---------- Styling for the Right Column within the Top Section ---------- */
+.rightColumn {
+  /* Arranges items vertically within the column. */
+  display: flex;
+  flex-direction: column;
+  /* Adds spacing between elements in the column. */
+  gap: 12px;
+}
+
+/* ---------- Common Styles for Form Rows (Label + Input/Textarea) ---------- */
+.formRow {
+  /* Arranges label and input vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Adds small spacing between label and its input/textarea. */
+  gap: 4px;
+}
+
+.formRow label {
+  /* Makes labels bold for better readability. */
+  font-weight: bold;
+}
+
+.formRow input,
+.formRow textarea,
+.formRow select {
+  /* Adds internal padding for text elements. */
+  padding: 6px;
+  /* Sets a dark background for input fields. */
+  background-color: #1f1f1f;
+  /* Sets a light text color. */
+  color: #eee;
+  /* Adds a subtle border. */
+  border: 1px solid #444;
+  /* Rounds the corners. */
+  border-radius: 6px;
+  /* Sets the font size. */
+  font-size: 0.95rem;
+  /* Ensures padding and border are included in the element's total size. */
+  box-sizing: border-box;
+}
+
+.formRow textarea {
+  /* Sets a minimum height for text areas, allowing them to expand with content. */
+  min-height: 60px;
+}
+
+/* ---------- Agent Members Section Styling ---------- */
+.projectFormSection {
+  /* Arranges content vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Adds spacing between elements in this section. */
+  gap: 16px;
+  /* Ensures this section takes full available height within its parent. */
+  height: 100%;
+}
+
+.projectFormSection button[type="button"] {
+  /* Adds padding to the button. */
+  padding: 8px 16px;
+  /* Sets a neutral dark background. */
+  background-color: #444;
+  /* Sets white text color. */
+  color: #fff;
+  /* Removes default border. */
+  border: none;
+  /* Rounds corners. */
+  border-radius: 6px;
+  /* Changes cursor to pointer on hover. */
+  cursor: pointer;
+  /* Aligns button to the start (left) of its flex container. */
+  align-self: flex-start;
+  /* Sets font size. */
+  font-size: 0.95rem;
+  /* Smooth transition for background color on hover. */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.projectFormSection button[type="button"]:hover {
+  /* Lightens background on hover. */
+  background-color: #555;
+}
+
+.agentRow {
+  /* Arranges elements within an agent row vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Adds spacing between elements. */
+  gap: 10px;
+  /* Adds internal padding. */
+  padding: 14px;
+  /* Adds a border around the agent row. */
+  border: 1px solid #444;
+  /* Sets a dark background. */
+  background-color: #1b1b1b;
+  /* Rounds corners. */
+  border-radius: 8px;
+}
+
+.rowTop {
+  /* Arranges top elements of an agent row horizontally. */
+  display: flex;
+  /* Adds spacing between elements. */
+  gap: 12px;
+  /* Allows elements to wrap if space is limited. */
+  flex-wrap: wrap;
+}
+
+.rowTop select,
+.rowTop input {
+  /* Adds internal padding. */
+  padding: 6px;
+  /* Sets a dark background. */
+  background-color: #1f1f1f;
+  /* Sets light text color. */
+  color: #eee;
+  /* Adds a subtle border. */
+  border: 1px solid #444;
+  /* Rounds corners. */
+  border-radius: 6px;
+  /* Sets a minimum width for responsiveness. */
+  min-width: 140px;
+  /* Sets font size. */
+  font-size: 0.9rem;
+}
+
+.removeAgentBtn {
+  /* Pushes the button to the far right within its flex container. */
+  margin-left: auto;
+  /* Sets a dark background with a reddish tint. */
+  background-color: #2b2b2b;
+  /* Sets a light red text color. */
+  color: #ff7777;
+  /* Adds a border. */
+  border: 1px solid #444;
+  /* Rounds corners. */
+  border-radius: 6px;
+  /* Adds padding. */
+  padding: 6px 10px;
+  /* Sets font size. */
+  font-size: 0.9rem;
+  /* Changes cursor to pointer on hover. */
+  cursor: pointer;
+  /* Smooth transition for background color. */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.removeAgentBtn:hover {
+  /* Darkens the background to a more pronounced red on hover. */
+  background-color: #3a1f1f;
+}
+
+.canMessageList {
+  /* Arranges message options horizontally. */
+  display: flex;
+  /* Allows options to wrap if space is limited. */
+  flex-wrap: wrap;
+  /* Adds spacing between options. */
+  gap: 12px;
+  /* Sets font size. */
+  font-size: 0.85rem;
+  /* Adds top margin. */
+  margin-top: 6px;
+}
+
+.canMessageList label {
+  /* Arranges label content (checkbox and text) horizontally. */
+  display: flex;
+  /* Vertically centers items. */
+  align-items: center;
+  /* Adds spacing between checkbox and text. */
+  gap: 6px;
+}
+
+.agentRow textarea {
+  /* Ensures textarea spans full width of its container. */
+  width: 100%;
+  /* Sets minimum height. */
+  min-height: 60px;
+  /* Adds internal padding. */
+  padding: 8px;
+  /* Sets dark background. */
+  background-color: #1f1f1f;
+  /* Sets light text color. */
+  color: #eee;
+  /* Adds border. */
+  border: 1px solid #444;
+  /* Rounds corners. */
+  border-radius: 6px;
+  /* Sets font size. */
+  font-size: 0.95rem;
+}
+
+.statusMessage {
+  /* Sets font size. */
+  font-size: 0.95rem;
+  /* Sets a green text color for success/status messages. */
+  color: #77dd77;
+  /* Adds top margin. */
+  margin-top: 12px;
+}
+
+.instructionsBox textarea {
+  /* Sets a smaller font size for instruction text. */
+  font-size: 0.85rem;
+  /* Sets a slightly muted text color. */
+  color: #bbb;
+  /* Prevents user from manually resizing the textarea. */
+  resize: none;
+}
+
+/* ---------- Specific styling for project title input ---------- */
+.leftColumn .formRow input {
+  /* Resets all default browser styles for consistency. */
+  all: unset;
+  /* Sets font size. */
+  font-size: 14px;
+  /* Sets line height. */
+  line-height: 1.2;
+  /* Adds internal padding. */
+  padding: 6px;
+  /* Sets dark background. */
+  background-color: #2a2a2a;
+  /* Sets white text color. */
+  color: white;
+  /* Rounds corners. */
+  border-radius: 4px;
+  /* Ensures it takes full width of its parent. */
+  width: 100%;
+  /* Ensures padding and border are included in the total width. */
+  box-sizing: border-box;
+  /* Adds a border. */
+  border: 1px solid #444;
+}
+
+/* --- Styles for the Template Control Box and its contents --- */
+.templateControlBox {
+  /* Sets dark background. */
+  background-color: #2a2a2a;
+  /* Adds a border. */
+  border: 1px solid #444;
+  /* Rounds corners. */
+  border-radius: 8px;
+  /* Adds internal padding. */
+  padding: 1rem;
+  /* Arranges content vertically. */
+  display: flex;
+  flex-direction: column;
+  /* Adds spacing between elements. */
+  gap: 1rem;
+  /* Adds vertical margins. */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.templateControlBox p {
+  /* Removes default paragraph margins. */
+  margin: 0;
+  /* Sets muted text color. */
+  color: #ccc;
+  /* Sets font size. */
+  font-size: 0.9rem;
+  /* Sets line height. */
+  line-height: 1.4;
+}
+
+.highlightText {
+  /* Increases font size slightly. */
+  font-size: 1.05em;
+  /* Sets a very light text color. */
+  color: #fafafa;
+  /* Makes text semi-bold. */
+  font-weight: 600;
+}
+
+.creativePick {
+  /* Makes text bold. */
+  font-weight: bold;
+  /* Applies a linear gradient as a background that clips to the text shape,
+     creating a vibrant, multi-color text effect. */
+  background: linear-gradient(90deg, #84fab0, #8fd3f4); /* Green to blue gradient */
+  -webkit-background-clip: text; /* For Webkit browsers */
+  background-clip: text; /* Standard property */
+  color: transparent; /* Makes the text transparent so the background gradient shows through */
+}
+
+.templateActions {
+  /* Arranges actions horizontally. */
+  display: flex;
+  /* Adds spacing between actions. */
+  gap: 1rem;
+  /* Vertically centers action items. */
+  align-items: center;
+}
+
+.templateDropdown {
+  /* Allows the dropdown to grow and take available space. */
+  flex-grow: 1;
+  /* Adds internal padding. */
+  padding: 8px;
+  /* Sets dark background. */
+  background-color: #1f1f1f;
+  /* Sets light text color. */
+  color: #eee;
+  /* Adds subtle border. */
+  border: 1px solid #444;
+  /* Rounds corners. */
+  border-radius: 6px;
+  /* Sets font size. */
+  font-size: 0.95rem;
+}
+
+.clearButton {
+  /* Adds padding. */
+  padding: 8px 16px;
+  /* Sets a reddish-brown background. */
+  background-color: #4a3d3d;
+  /* Sets light red text color. */
+  color: #ffc2c2;
+  /* Adds a matching border. */
+  border: 1px solid #5e4a4a;
+  /* Rounds corners. */
+  border-radius: 6px;
+  /* Changes cursor to pointer on hover. */
+  cursor: pointer;
+  /* Prevents text from wrapping. */
+  white-space: nowrap;
+  /* Sets font size. */
+  font-size: 0.95rem;
+  /* Smooth transition for background color. */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.clearButton:hover {
+  /* Darkens background on hover. */
+  background-color: #5e4a4a;
+}

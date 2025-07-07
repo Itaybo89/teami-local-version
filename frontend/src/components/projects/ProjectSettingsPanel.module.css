@@ -1,0 +1,72 @@
+/* FILE: src/components/projects/ProjectSettingsPanel.module.css */
+/* Purpose: Defines the styles for the project settings side panel, which appears
+            in the Project Workspace. */
+
+/* The main container for the settings panel. */
+.panel {
+  /* Do not grow or shrink, maintain a fixed width. */
+  flex: 0 0 250px;
+  width: 250px;
+  height: 100%;
+  box-sizing: border-box;
+
+  background-color: #1a1a1a; /* Matches the tab content background for a unified look. */
+  color: #f0f0f0;
+  padding: 1rem;
+  border-left: 1px solid #2a2a2a; /* A subtle line to separate it from the main content. */
+
+  /* Arrange settings vertically with space between them. */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* A container for an individual setting (e.g., a label and its input). */
+.setting {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* A small gap between a setting's label and its control. */
+}
+
+/* A local reset for input and select elements specifically within the panel
+   to override any global styles and ensure a consistent look. */
+.panel input,
+.panel select {
+  all: unset; /* Resets all default browser styles. */
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 6px;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the width. */
+}
+
+/* Base styles for buttons within the panel. */
+button {
+  padding: 8px 12px; /* A slightly larger padding for better clickability. */
+  margin-top: 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+/* Style for displaying error messages within the panel. */
+.error {
+  color: #ff4444; /* A bright red to indicate an error. */
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* Style for disabled options within a select dropdown. */
+select option:disabled {
+  color: #888; /* A muted color to indicate the option is not selectable. */
+}

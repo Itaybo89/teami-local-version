@@ -1,0 +1,33 @@
+/* FILE: src/components/messages/MessageList.module.css */
+/* Purpose: Styles the container for displaying a list of messages within a conversation.
+ * It manages scrolling behavior, padding, and provides styling for an empty state.
+ */
+
+.wrapper {
+  /* Allows the message list to take up available vertical space in its flex container. */
+  flex: 1;
+  /* Enables vertical scrolling only when message content exceeds the container's height. */
+  overflow-y: auto;
+  /* Adds general padding around the messages for spacing. */
+  padding: 1rem;
+
+  /* --- THIS IS THE FIX FOR THE OVERLAP ISSUE --- */
+  /* This adds extra padding at the bottom of the scrollable area. It creates an
+   * invisible buffer that ensures the last message is not hidden underneath the
+   * absolutely positioned message input form. Adjust this value if the height of
+   * your MessageInput component changes. */
+  padding-bottom: 100px;
+  
+  /* Sets a very dark background color for the message list area. */
+  background-color: #111;
+}
+
+/* Styles for the placeholder message shown when a conversation is empty. */
+.empty {
+  /* Adds padding around the empty state message. */
+  padding: 1rem;
+  /* Centers the "no messages" text. */
+  text-align: center;
+  /* Sets a muted grey color for the empty state text. */
+  color: #777;
+}
